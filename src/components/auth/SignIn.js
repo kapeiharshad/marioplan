@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-class SignUp extends Component {
-  state = { email: "", password: "", fristName: "", lastName: "" };
+class SignIn extends Component {
+  state = { email: "", password: "" };
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
@@ -15,7 +15,7 @@ class SignUp extends Component {
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">Sign Up</h5>
+          <h5 className="grey-text text-darken-3">Sign In</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" onChange={this.handleChange} />
@@ -25,15 +25,7 @@ class SignUp extends Component {
             <input type="password" id="passowrd" onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="fristName">Frist Name</label>
-            <input type="text" id="fristName" onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-            <button className="btn pink ligthen-1 z-depth-0">SignUp</button>
+            <button className="btn pink ligthen-1 z-depth-0">Login</button>
           </div>
         </form>
       </div>
@@ -41,4 +33,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default SignIn;
