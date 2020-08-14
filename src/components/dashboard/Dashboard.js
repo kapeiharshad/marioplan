@@ -22,6 +22,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    // setting projects inside props here
     projects: state.project.projects
   };
 };
