@@ -1,6 +1,20 @@
 export const createProject = (project) => {
-  console.log("from createproject project::", project);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    dispatch({ type: "CREATE_PROJECT", project });
+    const firestore = getFirestore();
+    firestore
+      .collection("projects")
+      .add({
+        ...project,
+        authorFirstName: "Hari",
+        authorLastName: "Kapei",
+        authorId: 12345,
+        createdAt: new Date()
+      })
+      .then(() => {
+        dispatch({ type: "CREATE_PROJECT", project });
+      })
+      .catch((err) => {
+        dispatch({ type: "CREATE_PROJECT_ERROR", err });
+      });
   };
 };
